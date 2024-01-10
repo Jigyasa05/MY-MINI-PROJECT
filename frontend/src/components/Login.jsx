@@ -97,7 +97,7 @@ const Login = () => {
                   >
                     Sign into your account
                   </h5>
-                  <div className="form-outline mb-4">
+                  <div className="form mb-4">
                     <input
                       type="email"
                       id="email"
@@ -109,7 +109,7 @@ const Login = () => {
                       Email address
                     </label>
                   </div>
-                  <div className="form-outline mb-4">
+                  <div className="form mb-4">
                     <input
                       type="password"
                       id="password"

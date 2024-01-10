@@ -5,6 +5,8 @@ import Signup from'./components/Signup'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import AddSales from './components/AddSales'
+import NotFound from './components/Notfound'
+import BrowseSales from './components/BrowseSales'
 
 
 const App = () => {
@@ -17,6 +19,9 @@ const App = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/addsales' element={<AddSales/>}/>
+        <Route path='/browsesales' element={<BrowseSales/>}/>
+
+        <Route path='*' element={<NotFound />} />
         
       </Routes>
       </BrowserRouter>

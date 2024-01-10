@@ -54,6 +54,18 @@ const Navbar = () => {
               AddSales
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" href="#" to={"/browsesales"}>
+              BrowseSales
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" href="#" to={"/Notfound"}>
+              Notfound
+            </NavLink>
+          </li>
+          
+
         </ul>
         {/* Left links */}
       </div>

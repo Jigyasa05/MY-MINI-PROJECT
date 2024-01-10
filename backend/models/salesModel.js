@@ -13,4 +13,4 @@ const mySchema = new Schema({
     location : {type : String, default : 'Not Specified'},
 });
 
-module.exports = model('users' , mySchema);
+module.exports = model('sales' , mySchema);
