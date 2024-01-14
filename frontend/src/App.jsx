@@ -7,6 +7,7 @@ import Home from './components/Home'
 import AddSales from './components/AddSales'
 import NotFound from './components/Notfound'
 import BrowseSales from './components/BrowseSales'
+import Details from './components/Details'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/addsales' element={<AddSales/>}/>
         <Route path='/browsesales' element={<BrowseSales/>}/>
+        <Route path='/details' element={<Details/>}/>
 
         <Route path='*' element={<NotFound />} />
         

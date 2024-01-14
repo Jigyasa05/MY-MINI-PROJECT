@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const BrowseSales = () => {
+
+    const navigate = useNavigate();
+     
+    const saleDetail = () => {
+        navigate("/details")
+    }
 
     const [ListShop, setListShop] = useState([])
 
@@ -23,25 +30,28 @@ const BrowseSales = () => {
             <div className="row">
                 {
                     ListShop.map((shop) =>(
-                <div className="col">
-                    <img  alt="" />
-                    <label htmlFor="" className="form-label">Shop Name</label>
-                   {shop.Shopname}
-                    <label htmlFor="" className="form-label">Categories</label>
-                   {shop.Category}
-                    <label htmlFor="" className="form-label">Description</label>
-                   {shop.Saledescription}
-                    <label htmlFor="" className="form-label">Offer</label>
-                   {shop.Offer}
-                    <label htmlFor="" className="form-label">Address</label>
-                   {shop.Address}
-                    <label htmlFor="" className="form-label">Start Date</label>
-                   {shop.Startdate}
-                    <label htmlFor="" className="form-label">End Date</label>
-                   {shop.Enddate}
-                    <label htmlFor="" className="form-label">Contact</label>
-                   {shop.Contact}
-                </div>
+                        <div className="container ">
+                            <div className="row d-flex justify-content-center g-3">
+                                <div className="col-4">
+                  <div className="card m-3" onClick={saleDetail}>
+                    <img src={shop.Image} alt="" />
+                    <div className="card-body">
+                        <div>
+                        <h1>{shop.Shopname}</h1>
+                        <p>{shop.category}</p>
+                        <p>{shop.Salesdescription}</p>
+                        <p>{shop.Offer}</p>
+                        <p>{shop.Address}</p>
+                        <p>{shop.Startdate}</p>
+                        <p>{shop.Enddate}</p>
+                        <p>{shop.Contact}</p>
+                        </div>
+                    </div>
+
+                  </div>
+                  </div>
+                  </div>
+                  </div>
                 ))
                 }
                 {/* <div className="col-6"></div> */}

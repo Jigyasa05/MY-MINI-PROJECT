@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useFormik } from "formik"
+import { enqueueSnackbar } from 'notistack';
 
 
 
@@ -8,8 +9,8 @@ const AddSales = () => {
 
   const [selImage, setSelImage] = useState('')
 
-  const uploadeImage = async(e) => {
-    const file = e.target.file[0];
+  const uploadeImage = async (e) => {
+    const file = e.target.files[0];
     setSelImage(file);
 
     const fd = new FormData();
@@ -18,9 +19,9 @@ const AddSales = () => {
       method: "POST",
       body: fd,
 
-    }) .than((res) => {
+    }) .then((res) => {
      if(res.status === 200) {
-      console.log("file");
+      console.log("file Uploade");
      }
     })
 
@@ -41,6 +42,7 @@ const AddSales = () => {
     },
     onSubmit: async (values, { resetForm }) => {
       // alert(JSON.stringify(values));
+      values.Image = selImage.name;
       console.log(values);
 
       // send request to backend/REST API
@@ -135,13 +137,14 @@ const AddSales = () => {
                 onChange={salesForm.handleChange} />
             </div>
             <div>
-            <label htmlFor="uploade" className="form-label">Uploade Image</label>
-            <input id='uploade' type="file" className="form-control"  onChange={{uploadeImage}}/>
+           
             </div>
             <div className='text-center'>           
                <button type="submit" className="btn btn-primary mt-3">
               Submit
             </button>
+            <label htmlFor="uploade" className="btn btn-primary">Uploade Image</label>
+            <input id='uploade' type="file" className="form-control"  onChange={uploadeImage}></input>
             </div>
 
           </form>
