@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const BrowseSales = () => {
 
     const navigate = useNavigate();
      
-    const saleDetail = () => {
-        navigate("/details")
-    }
+   
 
     const [ListShop, setListShop] = useState([])
 
@@ -33,8 +31,8 @@ const BrowseSales = () => {
                         <div className="container ">
                             <div className="row d-flex justify-content-center g-3">
                                 <div className="col-4">
-                  <div className="card m-3" onClick={saleDetail}>
-                    <img src={shop.Image} alt="" />
+                  <div className="card m-3">
+                    <img src={"http://localhost:5000/" + shop.Image} alt="" />
                     <div className="card-body">
                         <div>
                         <h1>{shop.Shopname}</h1>
@@ -46,6 +44,7 @@ const BrowseSales = () => {
                         <p>{shop.Enddate}</p>
                         <p>{shop.Contact}</p>
                         </div>
+                        <Link className="btn btn-primary" to={"/details/" +shop._id}>View Details</Link>
                     </div>
 
                   </div>

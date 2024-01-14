@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { useFormik } from "formik"
 import { enqueueSnackbar } from 'notistack';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const AddSales = () => {
+
+  const navigate = useNavigate();
 
   const [selImage, setSelImage] = useState('')
 
@@ -59,6 +62,7 @@ const AddSales = () => {
 
       if (response.status === 200) {
         enqueueSnackbar('registered Successfully', { variant: 'success' });
+      
       } else {
         enqueueSnackbar('Something went wrong', { variant: 'error' });
       }

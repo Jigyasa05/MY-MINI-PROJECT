@@ -24,6 +24,9 @@ app.use("/users" , UserRouter);
 app.use("/sales", SalesRouter )
 app.use("/util", UtilRouter );
 
+//for uploading images 
+app.use(express.static("./static/uploads"))
+
 
 
 
